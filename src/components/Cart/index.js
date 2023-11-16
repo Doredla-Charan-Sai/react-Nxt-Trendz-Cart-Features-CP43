@@ -15,7 +15,10 @@ const Cart = () => (
       const onRemoveAll = () => {
         removeAllCartItems()
       }
-      const amount = cartList.map(each => each.price * each.quantity)
+      const amount =
+        cartList.length !== 0
+          ? cartList.map(each => each.price * each.quantity)
+          : null
 
       return (
         <>
